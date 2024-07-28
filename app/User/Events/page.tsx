@@ -7,6 +7,7 @@ import { TypewriterEffect } from "@/app/components/ui/typewritter";
 import { motion } from "framer-motion";
 import axios from "axios";
 import { useSlots } from '@/app/hooks/Connect';
+import { HeroParallax } from "@/app/components/ui/hero-parallax";
 
 const Coming_soon = [
   {
@@ -17,6 +18,79 @@ const Coming_soon = [
     text: "Soon",
     classname: "",
   },
+];
+
+
+export const products = [
+  {
+    title: "Moonbeam",
+    link: "https://gomoonbeam.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
+  },
+  {
+    title: "Cursor",
+    link: "https://cursor.so",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/cursor.png",
+  },
+  {
+    title: "Rogue",
+    link: "https://userogue.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/rogue.png",
+  },
+ 
+  {
+    title: "Editorially",
+    link: "https://editorially.org",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/editorially.png",
+  },
+  {
+    title: "Editrix AI",
+    link: "https://editrix.ai",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/editrix.png",
+  },
+  {
+    title: "Pixel Perfect",
+    link: "https://app.pixelperfect.quest",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
+  },
+ 
+  {
+    title: "Algochurn",
+    link: "https://algochurn.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
+  },
+  {
+    title: "Aceternity UI",
+    link: "https://ui.aceternity.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
+  },
+  {
+    title: "Tailwind Master Kit",
+    link: "https://tailwindmasterkit.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
+  },
+  {
+    title: "SmartBridge",
+    link: "https://smartbridgetech.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
+  },
+  {
+    title: "Renderwork Studio",
+    link: "https://renderwork.studio",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
+  },
+ 
 ];
 
 
@@ -102,8 +176,8 @@ function page() {
   return (
     <div>
       <Sidebar />
+      <HeroParallax products={products} />
       <div className="ml-12 flex flex-col gap-8 items-center h-screen w-screen p-4">
-
       <motion.div
           initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
           animate={
@@ -206,6 +280,7 @@ function page() {
 
 
         <TypewriterEffect words={Coming_soon} />
+        
         <div className="text-justify">
           Crafted Colors of India &#45; An exclusive home show revering India&#39;s handloom legacy. <br/>
           
