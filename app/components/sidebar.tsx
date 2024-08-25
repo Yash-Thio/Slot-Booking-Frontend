@@ -64,7 +64,7 @@ function Sidebar(props: any) {
         variants={containerVariants}
         animate={containerControls}
         initial="close"
-        className="bg-neutral-900 flex flex-col z-10 gap-20 fixed top-0 left-0 h-full shadow shadow-neutral-600"
+        className="bg-neutral-900 flex flex-col z-20 gap-20 fixed top-0 left-0 h-full shadow shadow-neutral-600"
       >
         <div className="flex flex-row w-full justify-between place-items-center">
           <button
@@ -97,10 +97,7 @@ function Sidebar(props: any) {
           <NavigationLink name="Home" to="/">
             <HomeIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
           </NavigationLink>
-          <NavigationLink name="About" to="/About">
-            <NewspaperIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
-          </NavigationLink>
-          <NavigationLink name="Collection" to="/Team">
+          <NavigationLink name="Collection" to="/User/Collections">
             <UserGroupIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
           </NavigationLink>
           <NavigationLink name="Event Details" to="/User/Events">

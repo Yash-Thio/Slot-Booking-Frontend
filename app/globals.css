@@ -2,25 +2,122 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  position: relative;
+@keyframes monetY {
+  0% {
+    transform: translateX(-45%) translateY(-45%) rotateZ(-25deg);
+  }
+  100% {
+    transform: translateX(-45%) translateY(-45%) rotateZ(335deg); /* Rotates 360 degrees */
+  }
+}
+@keyframes monetW {
+  0% {
+    transform: translateX(45%) translateY(-45%) rotateZ(-25deg);
+  }
+  100% {
+    transform: translateX(45%) translateY(-45%) rotateZ(335deg); /* Rotates 360 degrees */
+  }
+}
+@keyframes monetB {
+  0% {
+    transform: translateX(-45%) translateY(45%) rotateZ(-25deg);
+  }
+  100% {
+    transform: translateX(-45%) translateY(45%) rotateZ(335deg); /* Rotates 360 degrees */
+  }
+}
+@keyframes monetT {
+  0% {
+    transform: translateX(45%) translateY(45%) rotateZ(-25deg);
+  }
+  100% {
+    transform: translateX(45%) translateY(45%) rotateZ(335deg); /* Rotates 360 degrees */
+  }
 }
 
-body::before {
+@keyframes revealMonet {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hgJtvv {
+  width: clamp(300px, 40vw, 550px); /* Adjusted for better visibility */
+  height: clamp(300px, 40vw, 550px); /* Adjusted for better visibility */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:-1; /* Ensure it's above other content */
+  background: url('/Monetp-y.png') center center / contain no-repeat;
+  transform: translateX(-45%) translateY(-45%) rotateZ(-25deg);
+  will-change: transform;
+  animation: monetY 30s ease-in-out 2s infinite alternate, revealMonet 1.5s ease-in-out 1.75s forwards;
+}
+.topright {
+  width: clamp(300px, 40vw, 550px); 
+  height: clamp(300px, 40vw, 550px); 
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: -1; /* Adjust this as needed */
+  background: url('/Monetp-w.png') center center / contain no-repeat;
+  transform: translateX(45%) translateY(-45%) rotateZ(-25deg); /* Rotate only */
+  will-change: transform;
+  animation: monetW 30s ease-in-out 2s infinite alternate, 
+             revealMonet 1.5s ease-in-out 1.75s forwards;
+}
+
+.bottomleft {
+  width: clamp(300px, 40vw, 550px); /* Adjusted for better visibility */
+  height: clamp(300px, 40vw, 550px); /* Adjusted for better visibility */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index:-1; /* Ensure it's above other content */
+  background: url('/Monetp-b.png') center center / contain no-repeat;
+  transform: translateX(-45%) translateY(45%) rotateZ(-25deg);
+  will-change: transform;
+  animation: monetB 30s ease-in-out 2s infinite alternate, revealMonet 1.5s ease-in-out 1.75s forwards;
+}
+
+.bottomright {
+  width: clamp(300px, 40vw, 550px); /* Adjusted for better visibility */
+  height: clamp(300px, 40vw, 550px); /* Adjusted for better visibility */
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index:-1; /* Ensure it's above other content */
+  background: url('/Monetp-t.png') center center / contain no-repeat;
+  transform: translateX(45%) translateY(45%) rotateZ(-25deg);
+  will-change: transform;
+  animation: monetT 30s ease-in-out 2s infinite alternate, revealMonet 1.5s ease-in-out 1.75s forwards;
+}
+
+
+body {
+  /* position: relative; */
+  background-color: #fef8e3;
+
+}
+
+/* body::before {
   content: "";
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("/Background/DSC_1497.JPG");
+  background-image: var(--background-image-url);
   background-size: cover;
   background-repeat: none;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-position: center;
-  filter: blur(1px); /* Adjust the value to control the amount of blur */
-  z-index: -1; /* Ensure the pseudo-element is behind other content */
-}
+  filter: blur(5px); 
+  z-index: -1; 
+} */
 
 
 body::-webkit-scrollbar{

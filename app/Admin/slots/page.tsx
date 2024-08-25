@@ -11,6 +11,14 @@ export default function Page1() {
   const slots = useSlots();
   const router = useRouter();
   const isLoggedIn = useRecoilValue(isLogin);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+    if (!isLoggedIn) {
+      router.push("/Admin");
+    }
+  }, [isLoggedIn, router]);
 
   const uniqueDates = useMemo(() => {
     if (!slots || slots.length === 0) return [];
@@ -18,12 +26,9 @@ export default function Page1() {
     return Array.from(new Set(dates));
   }, [slots]);
 
-  useEffect(() => {
-    console.log("inside useEffect");
-    if (!isLoggedIn) {
-      router.push("/Admin");
-    }
-  }, [isLoggedIn, router]);
+  if (!isMounted) {
+    return null; // Avoid rendering on the server side
+  }
 
   if (isLoggedIn) {
     return (
@@ -43,9 +48,8 @@ export default function Page1() {
                 {slots
                   .filter((slot) => slot.date === date)
                   .map((slot) => (
-                    <Link href={`/Admin/slots/${slot._id}`}>
+                    <Link href={`/Admin/slots/${slot._id}`} key={slot._id}>
                       <button
-                        key={slot._id}
                         className="px-4 py-2 rounded-md border border-black bg-white text-black text-sm hover:shadow-[4px_4px_0px_0px_rgba(0,0,0)] transition duration-200"
                       >
                         {slot.time} {slot.confirmedGuests}/{slot.maxGuests}

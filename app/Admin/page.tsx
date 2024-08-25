@@ -6,11 +6,13 @@ import { cn } from "@/app/utils/cn";
 import axios from "axios";
 import { useSetRecoilState, useRecoilValue } from "recoil";
 import { isLogin } from "@/app/store/atoms/islogin";
+import { useRouter } from "next/navigation";
 
 
 export default function SignupFormDemo() {
     const nameRef = useRef<HTMLInputElement>(null);
     const emailRef = useRef<HTMLInputElement>(null);
+    const router = useRouter();
     const passwordRef = useRef<HTMLInputElement>(null);
     const setIsLogin = useSetRecoilState(isLogin);
   
@@ -24,17 +26,17 @@ export default function SignupFormDemo() {
       
       }
       try {
-        const response = await axios.post('http://localhost:5000/admin/login', data);
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_LOGIN}`, data);
         console.log(response.data.message);
         localStorage.setItem('Authorization', response.data.Authorization);
         setIsLogin(true);
-        window.location.replace("http://localhost:3000/Admin/slots");
+        router.push("/Admin/slots");
       } catch (error) {
         console.error('Error submitting form:', error);
       }
     };
     return (
-      <div className=" h-screen relative w-full overflow-hidden bg-black flex flex-col items-center justify-center">
+      <div className=" h-screen relative w-full overflow-hidden flex flex-col items-center justify-center">
           <div className="absolute inset-0 w-full h-full bg-black z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
       <div className=" max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-black z-20">
         <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">

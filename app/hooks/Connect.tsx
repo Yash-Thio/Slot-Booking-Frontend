@@ -27,7 +27,7 @@ export const useBookings = (slot : string, refresh: boolean) => {
     const fetchBookings = async () => {
       try {
         const token = localStorage.getItem('Authorization');
-        const result = await axios.post("http://localhost:5000/api/v1/admin/bookings",{'id' : slot},{
+        const result = await axios.post(`${process.env.NEXT_PUBLIC_BOOKINGS}`,{'id' : slot},{
           headers: {
             'Authorization': token,
           }
@@ -50,7 +50,7 @@ export const useSlots = (): Slot[] => {
   useEffect(() => {
     const fetchSlots = async () => {
       try {
-        const result = await axios.get('http://localhost:5000/api/v1/slots');
+        const result = await axios.get(`${process.env.NEXT_PUBLIC_GET_SLOTS}`);
         setSlots(result.data);
       } catch (error) {
         console.error('Error fetching slots:', error);
