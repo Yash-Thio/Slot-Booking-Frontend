@@ -26,7 +26,7 @@ export const useBookings = (slot : string, refresh: boolean) => {
 
     const fetchBookings = async () => {
       try {
-        const token = localStorage.getItem('Authorization');
+        const token = sessionStorage.getItem('Authorization');
         const result = await axios.post(`${process.env.NEXT_PUBLIC_BOOKINGS}`,{'id' : slot},{
           headers: {
             'Authorization': token,
@@ -62,18 +62,3 @@ export const useSlots = (): Slot[] => {
 
   return slots;
 };
-
-// export function useUsers(){
-//     const [users, setUsers] = useState([]);
-
-//     useEffect(()=>{
-//         axios.get("http://localhost:5000/api/v1/admin/users")
-//             .then((res : any)=>{
-//                 setUsers(res.data.users)
-//             })
-//             .catch((e)=>{
-//                 console.log("error fetching users", e);
-//             });
-//     },[]);
-//     return [users];
-// }

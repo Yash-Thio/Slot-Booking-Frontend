@@ -7,15 +7,20 @@ type Card = {
   id: number;
   className: string;
   thumbnail: string;
+  format: "Landscape" | "Portrait";
 };
 
 export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
+
   return (
-    <div className="p-10 w-full h-full align-middle grid grid-cols-1 md:grid-cols-4 gap-4">
-      {cards.map((card) => (
-        <div key={card.id} className={cn(card.className, "relative")}>
+    <div className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-3  max-w-7xl mx-auto gap-4 relative">
+      {cards.map((card, i) => (
+        <div key={i} className={cn(card.className, "")}>
           <motion.div
-            className="relative overflow-hidden bg-white rounded-xl h-80 aspect-square"
+            className={cn(
+              card.className,
+              "relative overflow-hidden bg-white rounded-xl h-80 w-full",
+            )}
             layoutId={`card-${card.id}`}
           >
             <ImageComponent card={card} />
@@ -33,7 +38,9 @@ const ImageComponent = ({ card }: { card: Card }) => {
       src={card.thumbnail}
       height="500"
       width="500"
-      className="object-cover object-top absolute inset-0 h-full w-full transition duration-200"
+      className={cn(
+        "object-cover object-top absolute inset-0 h-full w-full transition duration-200"
+      )}
       alt="thumbnail"
     />
   );

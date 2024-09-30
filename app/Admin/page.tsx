@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Label } from "@/app/components/ui/lable";
 import { Input } from "@/app/components/ui/input";
 import { cn } from "@/app/utils/cn";
@@ -15,6 +15,20 @@ export default function SignupFormDemo() {
     const router = useRouter();
     const passwordRef = useRef<HTMLInputElement>(null);
     const setIsLogin = useSetRecoilState(isLogin);
+    const [isMounted, setIsMounted] = useState(false);
+    const isLoggedIn = useRecoilValue(isLogin);
+  
+    useEffect(() => {
+      // Mark the component as mounted on the client side
+      setIsMounted(true);
+    }, []);
+  
+    useEffect(() => {
+      console.log("inside useEffect");
+      if (isMounted && isLoggedIn) {
+        router.push("/Admin/slots");
+      }
+    }, [isLoggedIn, router, isMounted]);
   
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -28,7 +42,7 @@ export default function SignupFormDemo() {
       try {
         const response = await axios.post(`${process.env.NEXT_PUBLIC_LOGIN}`, data);
         console.log(response.data.message);
-        localStorage.setItem('Authorization', response.data.Authorization);
+        sessionStorage.setItem('Authorization', response.data.Authorization);
         setIsLogin(true);
         router.push("/Admin/slots");
       } catch (error) {

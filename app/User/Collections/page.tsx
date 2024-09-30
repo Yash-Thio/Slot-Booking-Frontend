@@ -1,13 +1,12 @@
 "use client";
 import React from "react";
 import { CardDemo } from "../../components/ui/card";
-import Sidebar from "../../components/sidebar";
 import axios from "axios";
 import { useEffect, useMemo, useState } from "react";
 
 type Item = {
-    id: number; // Ensure this matches your actual data structure
-    attributes: any; // Replace 'any' with the correct type
+    id: number;
+    attributes: any; 
   };
 
 function page() {
@@ -41,14 +40,14 @@ function page() {
   }, [items]);
 
   return (
-    <div className="overflow-x-hidden">
-      <Sidebar />
+    // <div className="overflow-x-hidden">
+    //   <Sidebar />
       <div className="ml-12">
         <div className="flex flex-wrap">
             {renderedCards}
             </div>
       </div>
-    </div>
+    // </div>
   );
 }
 

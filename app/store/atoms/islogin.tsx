@@ -2,9 +2,8 @@ import { atom } from 'recoil';
 
 const getInitialLoginState = () => {
   if (typeof window !== 'undefined') {
-    // const token = localStorage.getItem('Authorization');
-    // return Boolean(token);
-    return true;
+    const token = sessionStorage.getItem('Authorization');
+    return Boolean(token);
   }
   return false;
 };

@@ -16,7 +16,7 @@ function Request(param:request) {
   async function handleConfirm(){
     try{
       const token = localStorage.getItem('Authorization');
-      const response = await axios.put('http://localhost:5000/api/v1/admin/confirm',{bookingId: param.requestId},{
+      const response = await axios.put(`${process.env.NEXT_PUBLIC_CONFIRM}`,{bookingId: param.requestId},{
         headers:{
           'Authorization': token,
         }
@@ -31,7 +31,7 @@ function Request(param:request) {
   async function handleDeny(){
     try{
       const token = localStorage.getItem('Authorization');
-      const response = await axios.put('http://localhost:5000/api/v1/admin//deny',{bookingId: param.requestId},{
+      const response = await axios.put(`${process.env.NEXT_PUBLIC_DENY}`,{bookingId: param.requestId},{
         headers:{
           'Authorization': token,
         }

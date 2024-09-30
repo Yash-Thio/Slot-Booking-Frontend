@@ -32,6 +32,7 @@ function Page({ params }: { params: { slotId: string } }) {
   if(isLoggedIn)
   {
     return (
+      <div className="ml-12">
     <div className="p-4 flex flex-col gap-8">
       <div>
         <h2 className="text-2xl font-bold mb-4">Pending Bookings</h2>
@@ -86,6 +87,7 @@ function Page({ params }: { params: { slotId: string } }) {
           ))}
         </div>
       </div>
+    </div>
     </div>
   );
 }

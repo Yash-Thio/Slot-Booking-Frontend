@@ -32,14 +32,15 @@ export default function Page1() {
 
   if (isLoggedIn) {
     return (
+      <div className="ml-12">
       <div className="flex flex-col gap-6 p-4">
-        <div className="h-10">
+        {/* <div className="h-10">
           <Link href="/Admin/create">
             <button className="shadow-[inset_0_0_0_2px_#616467] text-black px-12 py-4 rounded-full tracking-widest uppercase font-bold bg-transparent hover:bg-[#616467] hover:text-white dark:text-neutral-200 transition duration-200">
               Create Slot
             </button>
           </Link>
-        </div>
+        </div> */}
         {uniqueDates.length > 0 ? (
           uniqueDates.map((date) => (
             <div key={date} className="">
@@ -62,6 +63,7 @@ export default function Page1() {
         ) : (
           <p>No slots available.</p>
         )}
+      </div>
       </div>
     );
   } else {

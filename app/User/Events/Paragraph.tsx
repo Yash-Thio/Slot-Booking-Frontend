@@ -27,7 +27,7 @@ export default function Paragraph() {
   }, []);
 
   return (
-    <div className="prose mx-auto my-10 text-neutral-300 text-lg font-bold">
+    <div className="prose mx-auto my-10 text-neutral-600 text-lg font-bold">
         <BlocksRenderer content={content} />
       
     </div>

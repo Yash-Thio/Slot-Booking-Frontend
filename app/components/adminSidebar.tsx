@@ -4,9 +4,8 @@ import NavigationLink from "./NavigationLink";
 import {
     HomeIcon,
     Square3Stack3DIcon,
-    UserIcon,
     ClipboardDocumentListIcon,
-    EnvelopeIcon
+    PlusCircleIcon
   } from "@heroicons/react/24/outline"
 
 
@@ -104,11 +103,8 @@ function Sidebar(props: any) {
           <NavigationLink name="Event Details" to="/User/Events">
             <ClipboardDocumentListIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
           </NavigationLink>
-          <NavigationLink name="Need Help?" to="/User/Contact">
-            <EnvelopeIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
-          </NavigationLink>
-          <NavigationLink name="Admin" to="/Admin">
-            <UserIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
+          <NavigationLink name="Create Slot" to="/Admin/create">
+            <PlusCircleIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
           </NavigationLink>
         </div>
         </motion.nav>
