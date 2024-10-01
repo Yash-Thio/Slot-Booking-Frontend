@@ -173,7 +173,7 @@ function Page() {
             Timeless Threads of India
           </h1>
           <h1 className="text-xl text-center text-opacity-80 font-bold">
-            Experience the Artistry of India's Handloom Legacy
+            Experience the Artistry of India&#39;s Handloom Legacy
           </h1>
         </div>
       </div>

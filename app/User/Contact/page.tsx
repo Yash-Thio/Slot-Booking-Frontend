@@ -19,11 +19,11 @@ function Page() {
                 </h2>
               </div>
               <p className="text-base lg:text-lg">
-                We'd love to hear from you! Whether you have an inquiry, need
+                We&#39;d love to hear from you! Whether you have an inquiry, need
                 more information about our events, or have any other requests,
                 feel free to reach out to us at{" "}
                 <a href="mailto:example@example.com">example@example.com</a>.
-                We're here to assist you and will get back to you as soon as
+                We&#39;re here to assist you and will get back to you as soon as
                 possible.
               </p>
             </div>
