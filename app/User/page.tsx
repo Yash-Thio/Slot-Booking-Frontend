@@ -1,16 +1,10 @@
 "use client";
 import React from "react";
 
-export default function Page({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function Page() {
   
 
   return(
-    // <div className="overflow-x-hidden w-screen h-screen overflow-y-hidden no-scrollbar">
-    // <Sidebar />
     <div className="ml-12 h-full flex items-center justify-center">
       <div className="w-full">
       <div className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-600 py-4">
@@ -23,7 +17,6 @@ export default function Page({
           </div>
       </div>
     </div>
-  // </div>
   
   );
 }
