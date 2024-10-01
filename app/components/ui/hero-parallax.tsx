@@ -107,7 +107,7 @@ export const Header = () => {
       
       <div className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
       <h1 className="text-7xl lg:text-7xl font-bold text-center text-opacity-80 text-black relative z-20 pr-20">Timeless Threads of India </h1>
-      <h1 className="text-lg pr-20">Experience the Artistry of India's Handloom Legacy</h1>
+      <h1 className="text-lg pr-20">Experience the Artistry of India&#39;s Handloom Legacy</h1>
       </div>
     </div>
     
