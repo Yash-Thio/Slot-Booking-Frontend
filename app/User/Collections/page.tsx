@@ -9,7 +9,7 @@ type Item = {
     attributes: any; 
   };
 
-function page() {
+function Page() {
   const [items, setItems] = useState<Item[]>([]);
 
   useEffect(() => {
@@ -51,4 +51,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

@@ -1,6 +1,6 @@
 import React from "react";
 
-function page() {
+function Page() {
   return (
     <div className="ml-12 h-full flex items-center justify-center">
       <div className="w-full">
@@ -34,4 +34,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

@@ -1,12 +1,7 @@
 "use client";
 import React from "react";
-import Sidebar from "../components/sidebar";
-import { motion } from "framer-motion";
-import { ImagesSlider } from "../components/ui/images-slider";
-import { LayoutGrid } from "../components/ui/layoutgrid";
-import {InfiniteMovingCards} from "../components/ui/infinite-moving-cards"
 
-export default function page({
+export default function Page({
   children,
 }: Readonly<{
   children: React.ReactNode;

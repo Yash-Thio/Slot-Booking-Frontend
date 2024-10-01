@@ -31,7 +31,7 @@ type Image = {
   format: "Landscape" | "Portrait";
 };
 
-function page() {
+function Page() {
   const slots = useSlots();
   const [selectedSlotId, setSelectedSlotId] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
@@ -313,5 +313,5 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
 
