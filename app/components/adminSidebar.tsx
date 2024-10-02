@@ -5,7 +5,8 @@ import {
     HomeIcon,
     Square3Stack3DIcon,
     ClipboardDocumentListIcon,
-    PlusCircleIcon
+    PlusCircleIcon,
+    CubeTransparentIcon
   } from "@heroicons/react/24/outline"
 
 
@@ -105,6 +106,9 @@ function Sidebar(props: any) {
           </NavigationLink>
           <NavigationLink name="Create Slot" to="/Admin/create">
             <PlusCircleIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
+          </NavigationLink>
+          <NavigationLink name="Change Content" to={process.env.NEXT_PUBLIC_CMS_URL}>
+            <CubeTransparentIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
           </NavigationLink>
         </div>
         </motion.nav>

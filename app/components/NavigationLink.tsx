@@ -1,7 +1,7 @@
 interface Props {
     children: React.ReactNode
     name: string
-    to: string
+    to: string | undefined
   }
   
   const NavigationLink = ({ children, name, to }: Props) => {
