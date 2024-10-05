@@ -4,12 +4,7 @@ import { cn } from "../../utils/cn";
 
 export function CardDemo(props: any) {
   // Safely access the image data
-  const imageData = props.data?.Image?.data?.[0]?.attributes?.url;
-
-  // Construct the background image URL, use a fallback if imageData is missing
-  const backgroundImageUrl = imageData
-    ? `${process.env.NEXT_PUBLIC_CMS_URL}${imageData}`
-    : "/path/to/placeholder-image.jpg"; // You can replace this with your fallback image
+  const imageData = (props.data.Image.data[0].attributes.url)? props.data.Image.data[0].attributes.url : "/path/to/placeholder-image.jpg";
 
   return (
     <div className="max-w-xs w-full group/card p-4">
@@ -18,7 +13,7 @@ export function CardDemo(props: any) {
           "cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl max-w-sm mx-auto backgroundImage flex flex-col justify-between p-4"
         )}
         style={{
-          backgroundImage: `url(${backgroundImageUrl})`,
+          backgroundImage: `url(${imageData})`,
           backgroundSize: "cover",
         }}
       >
